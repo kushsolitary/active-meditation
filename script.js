@@ -1,41 +1,35 @@
 var beginSession = function() {
 	setTimeout(function () {
-		$(".primary").fadeOut(100, function() {
+		$(".primary").fadeOut(50, function() {
 			$('.thumb').removeClass('thumb--hold')
 			$('.bar--front').addClass('bar--up')
-			$(this).text("Breathe In").fadeIn(100)
-		})
-
-		$('.hint').fadeOut(100, function() {
-			$(this).addClass('hint--green')
-			$(this).text("You're doing great!").fadeIn(100)
-
+			$(this).text("Breathe In").fadeIn(50)
 		})
 	}, 0)
 
 	setTimeout(function () {
-		$(".primary").fadeOut(100, function() {
+		$(".primary").fadeOut(50, function() {
 			$('.thumb').addClass('thumb--hold')
 			$('.bar--front').removeClass('bar--up')
-			$(this).text("Hold Breath").fadeIn(100)
+			$(this).text("Hold Breath").fadeIn(50)
 		})
 	}, 4000)
 
 	setTimeout(function () {
-		$(".primary").fadeOut(100, function() {
+		$(".primary").fadeOut(50, function() {
 			$('.thumb').removeClass('thumb--hold')
 			$('.bar--front').addClass('bar--down')
-			$(this).text("Breathe Out").fadeIn(100)
+			$(this).text("Breathe Out").fadeIn(50)
 		})
-	}, 8000)
+	}, 5500)
 	
 	setTimeout(function () {
-		$(".primary").fadeOut(100, function() {
+		$(".primary").fadeOut(50, function() {
 			$('.thumb').addClass('thumb--hold')
 			$('.bar--front').removeClass('bar--down')
-			$(this).text("Hold Breath").fadeIn(100)
+			$(this).text("Hold Breath").fadeIn(50)
 		})
-	}, 12000)
+	}, 9500)
 }
 
 var isSessionStarted = false
@@ -51,11 +45,17 @@ $('.thumb').on('touchstart', function (e) {
 
 	setTimeout(function() {
 		beginSession()
+		
+		$('.hint').fadeOut(50, function() {
+			$(this).addClass('hint--green')
+			$(this).text("You're doing great!").fadeIn(50)
+
+		})
 
 		setInterval(function () {
 			beginSession()
-		}, 16000)
-	}, 2400)
+		}, 11000)
+	}, 1400)
 })
 
 $('.thumb').draggable({
